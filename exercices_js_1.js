@@ -7,6 +7,7 @@
 
 function hello() {
 	// write your code HERE
+	console.log("Hello World!");
 };
 
 // ----
@@ -20,26 +21,79 @@ function hello() {
 
 // Chaque fonction devra effectuer l'opération correspondant à son nom, et renvoyer le résultat. 
 // Celui-ci sera stocké dans une variable, qui sera ensuite affichée dans la console
- 
+
+function addition(a, b) {
+	var somme = a + b;
+	return somme;
+	console.log(somme);
+}
+
+function soustraction(a, b) {
+	var difference = a - b;
+	return difference;
+	console.log(difference);
+}
+
+function multiplication(a, b) {
+	var produit = a * b;
+	return produit;
+	console.log(produit);
+}
+
+function division(a, b) {
+	var quotient = a / b;
+	return quotient;
+	console.log(quotient);
+}
+
+function concatenation(str1, str2) {
+	var mots = str1 + str2;
+	return mots;
+	console.log(mots);
+}
+
+function moyenne(a1, a2, a3) {
+	var moyenne = (a1 + a2 + a3)/3;
+	return moyenne;
+	console.log(moyenne);
+}
+
 // ----
 // Déclarer deux variables a et b, de valeurs respectives 5 et 12
 // A l'aide d'une variable intermédiaire, inverser les deux valeurs pour que a ait pour valeur 12 et b pour valeur 5
 // Afficher le résultat de a et b dans la console sous la forme d'une phrase: "A vaut : xxx et B vaut yyy"
-var a, b;
+function inversion(a, b) {
+//var a, b;
 // WRITE YOUR CODE HERE
+
+	//var a = 5;
+	//var b = 12;
+	b = b + a; 
+	a = b - a; 
+	b = b - a;
+	
+ 	console.log("A vaut " + a +" et B vaut " + b); 
+}
 
 // ----
 // Ecrire une fonction 'isDivisibleBy5' qui reçoit un nombre en paramètre, et qui vérifie que ce nombre est divisible par 5.
 // Cette fonction doit renvoyer un booléen
 var isDivisibleBy5 = function(x) {
 	// WRITE YOUR CODE HERE
-};
+	result = x % 5 === 0;
+	return result;
+	console.log(boolean(result));
+
+}
 
 // ----
 // Ecrire une fonction 'isDivisibleByN' qui reçoit deux nombres entiers x et n, et qui vérifie si x est divisible par n.
 // Cette fonction doit renvoyer un booléen
 function isDivisibleByN(x, n) {
 	// WRITE YOUR CODE HERE
+	result = x % n === 0;
+	return result;
+	console.log(boolean(result));
 }
 
 // ----
@@ -48,8 +102,9 @@ function isDivisibleByN(x, n) {
 // Afficher dans la console
 function genereEtArrondit() {
   // WRITE YOUR CODE HERE
+  var a = Math.random();
+  console.log(a.toFixed(2));
 }
-
 
 /**
 * Exercices sur les chaînes de caractères
@@ -58,6 +113,10 @@ function genereEtArrondit() {
 // ----
 // Ecrire une fonction qui reçoit une chaîne de caractères, et qui renvoie la position 
 // de la première occurence de la lettre 'e' dans cette chaîne
+function caracteres(str) {
+	var a = str.indexOf("e"); 
+	console.log(a);
+}
 
 // ----
 // Ecrire une fonction qui reçoit une chaîne de caractères, et qui renvoie la position 

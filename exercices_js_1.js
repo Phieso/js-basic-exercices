@@ -114,22 +114,34 @@ function genereEtArrondit() {
 // Ecrire une fonction qui reçoit une chaîne de caractères, et qui renvoie la position 
 // de la première occurence de la lettre 'e' dans cette chaîne
 function caracteres(str) {
-	var a = str.indexOf("e"); 
-	console.log(a);
+	//var a = str.indexOf("e"); 
+	console.log(str.indexOf("e"));
 }
 
 // ----
 // Ecrire une fonction qui reçoit une chaîne de caractères, et qui renvoie la position 
 // de la dernière occurence de la lettre 'e' dans cette chaîne
-
+function caracteresLast(str) {
+	
+	console.log(str.lastIndexOf("e"));
+}
 // ----
 // Ecrire une fonction qui reçoit une chaîne de caractères contenant une prhase entière, 
 // et qui renvoie un tableau contenant chacun des différents mots dans la phrase
+function phrase (str) {
+	
+	var reg = new RegExp("[ ,;]+");
+	var tableau = str.split(reg);
+	console.table(tableau);
+}
 
 // ----
 // Ecrire une fonction qui reçoit une chaîne de caractère, qui transforme 
 // la première lettre en majuscule, et qui renvoie la nouvelle chaîne
+function premiereMajuscule (str) {
+	return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 
+}
 
 /**
 * Exercices sur les fonctions natives javascript
@@ -138,19 +150,37 @@ function caracteres(str) {
 // ----
 // Ecrire une fonction qui stocke vos noms et prénoms dans deux variables firstName et lastName
 // Afficher dans une popup la concaténation des deux
-
+function nomPrenom (nom, prenom) {
+	var firstName = "Sophie";
+	var lastName = "Huynh";
+	alert(firstName + " " + lastName);
+}
 // ----
 // Ecrire une fonction qui respecte les étapes suivantes:
 // Demander à l'utilisateur de saisir une valeur numérique par le biais d'une popup
 // Stocker cette valeur dans une variable
 // Afficher sa valeur dans la console
-
+function saisirUneValeur() {
+	num = prompt('Saisissez une valeur numérique', 'valeur');
+	console.log(num);
+}
 // ----
 // Ecrire une fonction qui respecte les étapes suivantes:
 // Demander à l'utilisateur de saisir deux valeurs numériques grâce à une popup de saisie
 // L'alerter grâce à une popup si la valeur saisie n'est pas un nombre
 // Afficher dans la console la somme des deux valeurs
-
+function saisirDeuxValeurs(num1, num2) {
+	num1 = prompt('Saisissez une valeur numérique', 'valeur');
+	num2 = prompt('Saisissez une valeur numérique', 'valeur');
+		if (Number.isFinite(num1) == true && Number.isFinite(num2) == true)
+		{
+			alert("La valeur saisie n'est pas un nombre. Veuillez saisir deux valeurs numériques");
+			num1 = prompt('Saisissez une valeure numérique', 'valeur');
+			num2 = prompt('Saisissez une valeure numérique', 'valeur');
+		}
+	
+	console.log(parseFloat(num1) + parseFloat(num2));
+}
 
 /**
 * Exercices sur les tableaux
@@ -159,9 +189,15 @@ function caracteres(str) {
 // ----
 // Ecrire une fonction qui prend en argument un tableau de nombres et en calcule la somme.
 // Valeurs initiales: 
-var numTab = [45, 99, 357, -33, 1, 8, -78];
-function computeSumOfArray(tab) {
+//var numTab = [45, 99, 357, -33, 1, 8, -78];
+function computeSumOfArray(tab = []) {
 	// WRITE YOUR CODE HERE
+	var i=0;
+	for (var i=0; i<tab.length; i++) {
+		var somme=0;
+		somme += tab[i];
+	}
+	return somme;
 };
 
 /**
